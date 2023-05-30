@@ -57,6 +57,6 @@ clearButton.addEventListener("click",function(){
     advanceTaken.classList.add("hidden")
     totalAmountSpent.innerHTML = 0
     unitsBought.innerHTML = 0
-    unitsUseable = 0
+    unitsUseable.innerHTML = 0
 
 })

@@ -69,7 +69,7 @@ function Electricity() {
 
     function advanceTaken() {
         var advance = -30
-        if(advance && totalAmount <= 30){
+        if(advance && totalAmount == 0){
             unitsAvailable -= 21
             totalAmount -= advance
             return true
