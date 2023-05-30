@@ -3,6 +3,7 @@ function Electricity() {
     let unitsAvailable = 0
     let totalUnits = 0
     let totalAmount = 0
+    let count = 0
     // do we want to go with this or array? 
     let appliances = {
         'Stove': 10, 
@@ -14,15 +15,24 @@ function Electricity() {
     function topUpElectricity(amount) {
         if(amount == 50){
             unitsAvailable += 35
+            totalAmount += 50
+            totalUnits += 35
         }
         else if(amount == 20){
             unitsAvailable = unitsAvailable + 14
+            totalAmount += 20
+            totalUnits += 14 
         }
         else if(amount == 10){
             unitsAvailable = unitsAvailable + 7
+            totalAmount += 10
+            totalUnits += 7
         }
-        else if(amount === 'advance'){
+        else if(amount === 'advance' && count == 0){
+            count++
             unitsAvailable += 21
+            totalAmount += 30
+            totalUnits += 21
         }        
 
     }
@@ -58,20 +68,22 @@ function Electricity() {
     }
 
     function advanceTaken() {
-        var isUsed = false;
-        if(!isUsed){
-            isUsed = true;
-            unitsAvailable += 21
+        var advance = -30
+        if(advance && totalAmount <= 30){
+            unitsAvailable -= 21
+            totalAmount -= advance
+            return true
         }else{
-            return false;
+             return false
         }
     }
 
     function totalAmountSpent() {
+        return totalAmount
     }
 
     function totalUnitsBought(){
-            
+        return totalUnits
     }
 
     return {
