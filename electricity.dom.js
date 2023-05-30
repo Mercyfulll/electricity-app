@@ -55,4 +55,8 @@ clearButton.addEventListener("click",function(){
     document.querySelector("input[name='buyElectricity']:checked").checked = false;
     document.querySelector("input[name='useElectricity']:checked").checked = false;
     advanceTaken.classList.add("hidden")
+    totalAmountSpent.innerHTML = 0
+    unitsBought.innerHTML = 0
+    unitsUseable = 0
+
 })
